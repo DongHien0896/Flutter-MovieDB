@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: _title,
       home: MyStatefulWidget(),
     );
@@ -43,11 +44,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Index 1: Favorite',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Setting',
       style: optionStyle,
     ),
   ];
@@ -61,9 +62,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -74,12 +72,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
+            icon: Icon(Icons.stars),
+            title: Text('Favorite'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('School'),
+            icon: Icon(Icons.settings),
+            title: Text('Setting'),
           ),
         ],
         currentIndex: _selectedIndex,
